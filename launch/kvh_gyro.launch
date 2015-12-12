@@ -1,0 +1,18 @@
+<launch>
+
+    <!-- standalone mode -->
+    <node name="kvh_gyro" pkg="kvh_gyroscope" type="node_kvh.py" output="log">
+        <!-- mode: select the gyroscope output mode (A: with yaw estimation, R: only angular rate -->
+        <!-- rate: select the ros node rate (frequency of the output message) -->
+        <!-- latitude: used to derive the earth rate (set to 0.0 to disable) -->
+        <param name="mode" value="A"/>
+        <param name="rate" value="10.0"/>
+        <!--<param name="latitude" value="55.912"/>-->
+
+        <!-- port: serial port device (default to /vdev/tty_gyro) -->
+        <!-- baudrate: serial port rate (default to 38400) -->
+        <param name="port" value="/vdev/tty_gyro"/>
+        <param name="baudrate" value="38400"/>
+    </node>
+
+</launch>
